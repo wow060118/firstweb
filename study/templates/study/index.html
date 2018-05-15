@@ -1,0 +1,10 @@
+{% if latest_student_list %}
+    <ul>
+        {% for student in latest_student_list %}
+            {# 也可以拼接字符串 组成url  href=/study/{{ student.no}}#}
+            <li><a href="{% url 'study:detail' student.id %}">{{ student.no }}{{student.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No student are available.</p>
+{% endif %}

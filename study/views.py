@@ -27,8 +27,9 @@ def vote (request,t_no):
     # s1.no = 123
     # s1.name = "ggg"
     # s1.save()
-    sss = student.objects.raw("select * from study_student")
+    sss = student.objects.all()
     print(serializers.serialize("json",sss))
+    print(sss.count())
     cursor = connection.cursor()
     cursor.execute('select * from study_student')
     runquery('select * from study_student')
